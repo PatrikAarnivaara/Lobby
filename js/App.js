@@ -24,6 +24,7 @@ class App extends Domer {
         return html`
             <section>
             <header>
+        <!--<GIT!>-->
         <!--<img class="logo" src="/image/acme.png" alt="logo">-->
             <nav class="nav_links"> 
         <ul>
