@@ -1,13 +1,14 @@
 class App extends Domer {
 
-    home = new Home();
-    visitor = new VisitorList(this.home.visitors);
-    car = new Car(this.home.visitors);
+    
     image = new Image();
-   
+    /* visitors = new VisitorList();
+    home = new Home(this.visitors); */
 
     constructor() {
         super();
+        this.visitors = new VisitorList();
+        this.home = new Home(this.visitors);
     }
 
     render(html, route) {
@@ -18,15 +19,13 @@ class App extends Domer {
             <nav class="nav_links"> 
         <ul>
             <li><button class="buttonNav" click="showVisitors"><a href="/visitor">VISITORS</a></button></li>
-            <li><button class="buttonNav" click="showCars"><a href="/car">CARS</a></button></li>
             <li><button class="buttonNav" click="showImage"><a href="/image">CCTV</a></button></li>
         </ul>
             </nav>
             </header>
               <main>
               ${route('/') ? this.home : ''}
-              ${route('/visitor') ? this.visitor : ''}
-              ${route('/car') ? this.car : ''}
+              ${route('/visitor') ? this.visitors : ''}
               ${route('/image') ? this.image : ''}
               </main>
             <footer>© ACME</footer>
