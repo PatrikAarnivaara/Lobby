@@ -1,13 +1,16 @@
 class Car extends Domer {
 
-    constructor() {
+    constructor(visitors) {
         super();
+        this.visitors = visitors;
+        console.log(this.visitors);
+        
     }
 
     render(html) {
         return html`
           <section>
-             <h2>Cars</h2>
+          ${this.visitors}
           </section>
         `
     }

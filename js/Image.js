@@ -1,7 +1,5 @@
 class Image extends Domer {
     
-    
-
     constructor() {
         super();
     }

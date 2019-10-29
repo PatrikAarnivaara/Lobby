@@ -1,14 +1,21 @@
-class Maintenance extends Reason {
+class Maintenance extends Company {
 
-    constructor() {
-        super();
+    workOrder = '';
+
+    constructor (dateTime, fullName, idNumber, numberPlate, company, workOrder) {
+        super(dateTime, fullName, idNumber, numberPlate, company);
+        this.workOrder = workOrder;
+    }
+
+    get workOrder(){
+        return this.workOrder;
     }
 
     render(html) {
         return html`
-          <section>
-             
-          </section>
+          <div>
+            ${this.workOrder}
+          </div>
         `
     }
 

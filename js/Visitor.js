@@ -1,15 +1,41 @@
 class Visitor extends Domer {
 
-    constructor() {
+    dateTime;
+    fullName;
+    idNumber;
+    numberPlate;
+    
+    constructor(dateTime, fullName, idNumber, numberPlate){
         super();
+        this.dateTime = dateTime;
+        this.fullName = fullName;
+        this.idNumber = idNumber;
+        this.numberPlate = numberPlate;
+    }
+
+    get dateTime(){
+        return this.dateTime;
+    }
+
+    get fullName(){
+        return this.fullName;
+    }
+
+    get idNumber(){
+        return this.idNumber;
+    }
+
+    get numberPlate(){
+        return this.numberPlate;
     }
 
     render(html) {
         return html`
-          <section>
-          <h2>Visitors</h2>
-          </section>
+          <div>
+          ${this.fullName} ${this.idNumber} ${this.numberPlate} 
+          </div>
         `
     }
+
 
 }

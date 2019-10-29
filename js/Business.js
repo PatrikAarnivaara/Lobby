@@ -1,14 +1,21 @@
-class Business extends Domer {
+class Business extends Company {
 
-    constructor() {
-        super();
+    department = '';
+
+    constructor (dateTime, fullName, idNumber, numberPlate, company, department) {
+        super(dateTime, fullName, idNumber, numberPlate, company);
+        this.department = department;
+    }
+
+    get department(){
+        return this.department;
     }
 
     render(html) {
         return html`
-          <section>
-             
-          </section>
+          <div>
+          ${this.department}
+          </div>
         `
     }
 
