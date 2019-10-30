@@ -17,14 +17,12 @@ class VisitorList extends Domer {
         let completeVisitorList = '';
         for (let visitor of this.visitors) {
             completeVisitorList += `
-            <div>${visitor.dateTime} </div> 
-            <div>${visitor.fullName} </div>
-            <div>${visitor.idNumber} </div>
-            <div>${visitor.numberPlate} </div>
-            <div>${visitor.company} </div> 
-            <div>${visitor.department} </div>
-            <div>${visitor.workOrder} </div>
-            <div>${visitor.personal} </div>    
+            <div>${visitor.dateTime}</div> 
+            <div>${visitor.fullName}</div>
+            <div>${visitor.idNumber}</div>
+            <div>${visitor.department}</div>
+            <div>${visitor.workOrder}</div>
+            <div>${visitor.personal}</div>    
           `
         }
         return completeVisitorList;
@@ -53,9 +51,9 @@ class VisitorList extends Domer {
 
     render(html) {
         return html`
-          <div>
+          <section>
           ${this.getCompleteVisitorList()}
-          </div>
+          </section>
         `
     }
 

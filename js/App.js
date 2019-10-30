@@ -15,7 +15,7 @@ class App extends Domer {
         return html`
             <section>
             <header>
-        <a href="/"><h1>ACME</h1></a>
+        <a href="/"><h1>LOBBY</h1></a>
             <nav class="nav_links"> 
         <ul>
             <li><button class="buttonNav" click="showVisitors"><a href="/visitor">VISITORS</a></button></li>
@@ -28,7 +28,7 @@ class App extends Domer {
               ${route('/visitor') ? this.visitors : ''}
               ${route('/image') ? this.image : ''}
               </main>
-            <footer>© ACME</footer>
+            <footer>© LOBBY</footer>
             </section>`
     }
 }

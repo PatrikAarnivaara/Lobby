@@ -1,9 +1,9 @@
-class Business extends Company {
+class Business extends Visitor {
 
     department = '';
 
-    constructor (dateTime, fullName, idNumber, numberPlate, company, department) {
-        super(dateTime, fullName, idNumber, numberPlate, company);
+    constructor (dateTime, fullName, idNumber, department) {
+        super(dateTime, fullName, idNumber);
         this.department = department;
     }
 

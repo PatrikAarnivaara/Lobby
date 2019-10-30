@@ -1,9 +1,9 @@
-class Maintenance extends Company {
+class Maintenance extends Visitor {
 
     workOrder = '';
 
-    constructor (dateTime, fullName, idNumber, numberPlate, company, workOrder) {
-        super(dateTime, fullName, idNumber, numberPlate, company);
+    constructor (dateTime, fullName, idNumber, workOrder) {
+        super(dateTime, fullName, idNumber);
         this.workOrder = workOrder;
     }
 

@@ -3,14 +3,13 @@ class Visitor extends Domer {
     dateTime;
     fullName;
     idNumber;
-    numberPlate;
     
-    constructor(dateTime, fullName, idNumber, numberPlate){
+    constructor(dateTime, fullName, idNumber){
         super();
         this.dateTime = dateTime;
         this.fullName = fullName;
         this.idNumber = idNumber;
-        this.numberPlate = numberPlate;
+        
     }
 
     get dateTime(){
@@ -25,9 +24,6 @@ class Visitor extends Domer {
         return this.idNumber;
     }
 
-    get numberPlate(){
-        return this.numberPlate;
-    }
 
     render(html) {
         return html`
