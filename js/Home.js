@@ -11,6 +11,9 @@ class Home extends Domer {
     disableEnableDeptField = 'disabled';
     disableEnableWorkOrderField = 'disabled';
     disableEnablePersonalField = 'disabled';
+    checkedDept = '';
+    checkedWorkOrder = '';
+    checkedPersonal = '';
 
     //Attribut till övriga funktioner.
     idNumberCheckOut = '';
@@ -111,18 +114,27 @@ class Home extends Domer {
         this.disableEnableDeptField = '';
         this.disableEnableWorkOrderField = 'disabled';
         this.disableEnablePersonalField = 'disabled';
+        this.checkedDept = 'checked';
+        this.checkedWorkOrder = '';
+        this.checkedPersonal = '';
     }
 
     enableWorkOrderField() {
         this.disableEnableDeptField = 'disabled';
         this.disableEnableWorkOrderField = '';
         this.disableEnablePersonalField = 'disabled';
+        this.checkedDept = '';
+        this.checkedWorkOrder = 'checked';
+        this.checkedPersonal = '';
     }
 
     enablePersonalField() {
         this.disableEnableDeptField = 'disabled';
         this.disableEnableWorkOrderField = 'disabled';
         this.disableEnablePersonalField = '';
+        this.checkedDept = '';
+        this.checkedWorkOrder = '';
+        this.checkedPersonal = 'checked';
     }
 
 
@@ -134,13 +146,13 @@ class Home extends Domer {
         <input bind="idNumber" placeholder="YYMMDD-NNNN*" click="removeCheckInConfirmation" type="text" pattern="[0-9]{6}-[0-9]{4}" required><br><br>
         <fieldset>
         <legend>Reason for visit</legend>
-        <input type="radio" id="business" name="reason" click="enableDepartmentField" >
+        <input type="radio" id="business" name="reason" click="enableDepartmentField"${this.checkedDept}>
         <label for="business">Business</label><br/>
-        <input type="radio" id="maintenance" name="reason" click="enableWorkOrderField">
+        <input type="radio" id="maintenance" name="reason" click="enableWorkOrderField" ${this.checkedWorkOrder}>
         <label for="maintenance">Maintenance</label><br/>
-        <input type="radio" id="personal" name="reason" click="enablePersonalField">
+        <input type="radio" id="personal" name="reason" click="enablePersonalField" ${this.checkedPersonal}>
         <label for="personal">Personal</label><br/>
-        <input class="inputFieldset" bind="department" placeholder="Department" ${this.disableEnableDeptField} click="removeCheckInConfirmation"><br>
+        <input class="inputFieldset" bind="department" placeholder="Department" ${this.disableEnableDeptField} click="removeCheckInConfirmation" ><br>
         <input class="inputFieldset" bind="workOrder" placeholder="Work order" ${this.disableEnableWorkOrderField} click="removeCheckInConfirmation"><br>
         <input class="inputFieldset" bind="relation" placeholder="Relation" ${this.disableEnablePersonalField} click="removeCheckInConfirmation"><br>
         </fieldset><br>

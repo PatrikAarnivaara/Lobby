@@ -2,8 +2,8 @@ class Personal extends Visitor {
 
     personal = '';
 
-    constructor(dateTime, fullName, idNumber, numberPlate, personal) {
-        super(dateTime, fullName, idNumber, numberPlate);
+    constructor(dateTime, fullName, idNumber, personal) {
+        super(dateTime, fullName, idNumber);
         this.personal = personal;
     }
 
