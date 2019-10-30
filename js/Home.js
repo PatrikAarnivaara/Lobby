@@ -78,6 +78,7 @@ class Home extends Domer {
     //Tar bort objekt från besökslistan
     checkOut() {
         this.visitorList.removeVisitor(this.idNumberCheckOut)
+        this.idNumberCheckOut = '';
     }
 
     //Knappen är inaktiverad om fältet inte är ifyllt
@@ -92,21 +93,23 @@ class Home extends Domer {
 
     //Tömmer variabeln som bekräftar utcheckning
     removeCheckOutConfirmation() {
-        this.confirmCheckOut = '';
+        this.visitorList.confirmCheckOut = '';
+        this.idNumberCheckOut = '';
+        this.confirmCheckIn = '';
     }
 
 
     /* Datum och tid */
     dateTimeToday() {
         let today = new Date();
-        //Lägger till etta för att månader börjar på 0.
+        //Lägger till etta för månader som börjar på 0.
         let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
         let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         let dateTime = date + ' ' + time;
         return dateTime;
 
     }
-    
+
 
     /* Aktivera och avaktivera fält med radioknappar */
     enableDepartmentField() {
@@ -160,9 +163,9 @@ class Home extends Domer {
         <button type="reset" class="clearButton">Clear</button><br><br>
         </form>
         <form class="bottom">
+        <p>${this.visitorList.confirmCheckOut}</p>
         <br><input bind="idNumberCheckOut" placeholder="YYMMDD-NNNN*" click="removeCheckOutConfirmation" type="text" pattern="[0-9]{6}-[0-9]{4}" required><br><br>
         <button type=button class="checkOutButton" click="checkOut" ${this.checkOutButtonControl()}>Check Out</button><br><br>
-        <p>${this.confirmCheckOut}</p>
         </form>
         </section>
         `
