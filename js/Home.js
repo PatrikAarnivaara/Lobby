@@ -1,22 +1,21 @@
 class Home extends Domer {
 
-    //Visitorattribut.
+    //Input-field attribut.
     dateTime = '';
     fullName = '';
     idNumber = '';
     department = '';
     workOrder = '';
     relation = '';
-    regExNumberPlate = "[A-Z]{3}[0-9]{3}";
+    
+    //Attribut till övriga funktioner.
+    idNumberCheckOut = '';
     disableEnableDeptField = 'disabled';
     disableEnableWorkOrderField = 'disabled';
     disableEnablePersonalField = 'disabled';
     checkedDept = '';
     checkedWorkOrder = '';
     checkedPersonal = '';
-
-    //Attribut till övriga funktioner.
-    idNumberCheckOut = '';
 
     constructor(visitorList) {
         super();
@@ -25,7 +24,6 @@ class Home extends Domer {
 
 
     /* Incheckningsfunktioner. */
-
     checkIn() {
         //Lägger till en tidsstämpel.
         this.dateTime = this.dateTimeToday();
@@ -60,7 +58,7 @@ class Home extends Domer {
     /* Knappen är inaktiverad om fälten inte är ifyllda */
     checkInButtonControl() {
 
-        if (this.fullName === '' || this.idNumber === '' || this.numberPlate === '') {
+        if (this.fullName === '' || this.idNumber === '') {
             return `disabled`;
         }
         else {
@@ -72,7 +70,6 @@ class Home extends Domer {
     /* Tömmer variabeln som bekräftar incheckning */
     removeCheckInConfirmation() {
         this.confirmCheckIn = '';
-        this.noVisitorsMessage = '';
     }
 
 
@@ -96,7 +93,6 @@ class Home extends Domer {
     /* Tömmer variabeln som bekräftar utcheckning */
     removeCheckOutConfirmation() {
         this.confirmCheckOut = '';
-        this.noVisitorsMessage = '';
     }
 
     /* Datum och tid */
@@ -110,6 +106,7 @@ class Home extends Domer {
 
     }
 
+    /* Aktivera och avaktivera fält med radioknappar */
     enableDepartmentField() {
         this.disableEnableDeptField = '';
         this.disableEnableWorkOrderField = 'disabled';
