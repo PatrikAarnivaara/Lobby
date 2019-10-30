@@ -1,14 +1,14 @@
 class Home extends Domer {
 
-    //Input-field attribut.
+    //Input-field attribut
     dateTime = '';
     fullName = '';
     idNumber = '';
     department = '';
     workOrder = '';
     relation = '';
-    
-    //Attribut till övriga funktioner.
+
+    //Attribut till övriga funktioner
     idNumberCheckOut = '';
     disableEnableDeptField = 'disabled';
     disableEnableWorkOrderField = 'disabled';
@@ -23,7 +23,8 @@ class Home extends Domer {
     }
 
 
-    /* Incheckningsfunktioner. */
+    /* Incheckningsfunktioner */
+    //Incheckning med villkor, olika objekt skapas beroende av vilket input-fält som väljs
     checkIn() {
         //Lägger till en tidsstämpel.
         this.dateTime = this.dateTimeToday();
@@ -43,10 +44,10 @@ class Home extends Domer {
             return;
         }
 
-        /* Bekräftar incheckning */
+        //Bekräftar incheckning
         this.confirmCheckIn = `A visitor with ID number ${this.idNumber} has been checked in.`;
 
-        /* Rensar inputfält. */
+        // Rensar inputfält
         this.fullName = '';
         this.idNumber = '';
         this.department = '';
@@ -55,7 +56,7 @@ class Home extends Domer {
 
     }
 
-    /* Knappen är inaktiverad om fälten inte är ifyllda */
+    //Knappen är inaktiverad om fälten inte är ifyllda
     checkInButtonControl() {
 
         if (this.fullName === '' || this.idNumber === '') {
@@ -67,20 +68,19 @@ class Home extends Domer {
 
     }
 
-    /* Tömmer variabeln som bekräftar incheckning */
+    //Tömmer variabeln som bekräftar incheckning
     removeCheckInConfirmation() {
         this.confirmCheckIn = '';
     }
 
 
-
     /* Utcheckningsfunktioner */
+    //Tar bort objekt från besökslistan
     checkOut() {
         this.visitorList.removeVisitor(this.idNumberCheckOut)
     }
 
-
-    /* Knappen är inaktiverad om fältet inte är ifyllt */
+    //Knappen är inaktiverad om fältet inte är ifyllt
     checkOutButtonControl() {
         if (this.idNumberCheckOut === '') {
             return `disabled`;
@@ -90,10 +90,11 @@ class Home extends Domer {
         }
     }
 
-    /* Tömmer variabeln som bekräftar utcheckning */
+    //Tömmer variabeln som bekräftar utcheckning
     removeCheckOutConfirmation() {
         this.confirmCheckOut = '';
     }
+
 
     /* Datum och tid */
     dateTimeToday() {
@@ -105,6 +106,7 @@ class Home extends Domer {
         return dateTime;
 
     }
+    
 
     /* Aktivera och avaktivera fält med radioknappar */
     enableDepartmentField() {
