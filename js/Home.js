@@ -79,8 +79,13 @@ class Home extends Domer {
     /* Utcheckningsfunktioner */
     //Tar bort objekt från besökslistan
     checkOut() {
+        if(this.visitorList.visitors.length === 0) {
+            this.visitorList.confirmCheckOut = `Sorry, there are no visitors in the system.`;
+        }
+        else {
         this.visitorList.removeVisitor(this.idNumberCheckOut)
         this.idNumberCheckOut = '';
+        }
     }
 
     //Knappen är inaktiverad om fältet inte är ifyllt
@@ -153,7 +158,8 @@ class Home extends Domer {
         click="removeCheckInConfirmation" 
         type="text" 
         pattern="[0-9]{6}-[0-9]{4}" 
-        required><br><br>
+        required>
+        <br><br>
         <fieldset>
         <legend>Reason for visit</legend>
         <input type="radio" id="business" name="reason" click="enableDepartmentField"${this.checkedDept}>
@@ -167,20 +173,22 @@ class Home extends Domer {
         <input class="inputFieldset" bind="relation" placeholder="Relation" ${this.disableEnablePersonalField} click="removeCheckInConfirmation"><br>
         </fieldset><br>
         <p>${this.confirmCheckIn}</p><br>
-        <button type="button" click="checkIn" class="checkInButton" ${this.checkInButtonControl()}>Check In</button><br><br>
+        <button type="button" click="checkIn" class="checkInButton" ${this.checkInButtonControl}>Check In</button><br><br>
         <button type="reset" class="clearButton">Clear</button><br><br>
         </form>
         <form class="bottom">
         <p>${this.visitorList.confirmCheckOut}</p>
-        <br><input 
+        <br>
+        <input 
         bind="idNumberCheckOut" 
         placeholder="YYMMDD-NNNN*" 
         click="removeCheckOutConfirmation" 
         type="text" 
         pattern="[0-9]{6}-[0-9]{4}"
         required
-        ><br><br>
-        <button type=button class="checkOutButton" click="checkOut" ${this.checkOutButtonControl()}>Check Out</button><br><br>
+        >
+        <br><br>
+        <button type=button class="checkOutButton" click="checkOut" ${this.checkOutButtonControl}>Check Out</button><br><br>
         </form>
         </section>
         `

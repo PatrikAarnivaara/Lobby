@@ -19,7 +19,7 @@ class App extends Domer {
             <nav class="nav_links"> 
         <ul>
             <li><button class="buttonNav" click="showVisitors"><a href="/visitor">VISITORS</a></button></li>
-            <li><button class="buttonNav" click="showImage"><a href="/image">CCTV</a></button></li>
+            <li><button class="buttonNav" click="showImage"><a href="/image" >CCTV</a></button></li>
         </ul>
             </nav>
             </header>

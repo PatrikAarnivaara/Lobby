@@ -19,16 +19,17 @@ class VisitorList extends Domer {
     businessVisitor() {
         let businessVisitor = '';
         for (let visitor of this.visitors) {
-            if (this.visitors.department !== '') {
-                businessVisitor += `
+            //if (this.visitors.department !== '') {
+            businessVisitor += `
             <div>${visitor.dateTime}</div> 
             <div>${visitor.fullName}</div>
             <div>${visitor.idNumber}</div>
             <div>${visitor.department}</div>   
           `
-            }
-            return businessVisitor;
+            //}
+
         }
+        return businessVisitor;
     }
 
     maintenanceVisitor() {
@@ -77,6 +78,7 @@ class VisitorList extends Domer {
 
     /* let completeVisitorList = '';
     for (let visitor of this.visitors) {
+        
         if (visitor.department !== '') {
             completeVisitorList += `
         <div>${visitor.dateTime}</div> 
@@ -102,7 +104,10 @@ class VisitorList extends Domer {
         }
 
     }
-    return completeVisitorList; */
+    return completeVisitorList; 
+    
+    }
+    */
 
 
     /* Utcheckningsfunktion */
@@ -129,8 +134,8 @@ class VisitorList extends Domer {
 
     render(html) {
         return html`
-          <section>
-          ${this.businessVisitor()} ${this.maintenanceVisitor()} ${this.personalVisitor()}
+          <section id="render">
+          ${this.businessVisitor()}
           <p></p>
           </section>
         `
