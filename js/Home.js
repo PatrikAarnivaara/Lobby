@@ -146,15 +146,16 @@ class Home extends Domer {
         this.checkedPersonal = 'checked';
     }
 
+    //"/^[0-9]{6}\-[0-9]{4}$/" 
 
     render(html) {
         return html`
         <section>
         <form class="top">
-        <input bind="fullName" placeholder="Firstname Lastname*" click="removeCheckInConfirmation" type="text" ><br>
+        <input bind="fullName" placeholder="Firstname Lastname" click="removeCheckInConfirmation" type="text" ><br>
         <input 
         bind="idNumber" 
-        placeholder="YYMMDD-NNNN*" 
+        placeholder="YYMMDD-NNNN" 
         click="removeCheckInConfirmation" 
         type="text" 
         pattern="[0-9]{6}-[0-9]{4}" 

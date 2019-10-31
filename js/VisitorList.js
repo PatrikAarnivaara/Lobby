@@ -120,7 +120,7 @@ class VisitorList extends Domer {
         <div>${visitor.idNumber}</div>
         <div>${visitor.department}</div>   
       `}
-            return completeVisitorList;
+            
         }
         else if (this.visitors.workOrder !== '') {
             for (let visitor of this.visitors) {
@@ -131,7 +131,7 @@ class VisitorList extends Domer {
         <div>${visitor.workOrder}</div>
       `
             }
-            return completeVisitorList;
+            
         }
         else {
             for (let visitor of this.visitors) {
@@ -142,8 +142,9 @@ class VisitorList extends Domer {
         <div>${visitor.personal}</div>
       `
             }
-            return completeVisitorList;
+            
         }
+        return completeVisitorList;
 
     }
 
