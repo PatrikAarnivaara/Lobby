@@ -20,14 +20,13 @@ class VisitorList extends Domer {
         businessVisitor() {
             let businessVisitor = '';
             for (let visitor of this.visitors) {
-                //if (this.visitors.department !== '') {
+                if (this.visitors.department !== '') {
                 businessVisitor += `
                 <div>${visitor.dateTime}</div> 
                 <div>${visitor.fullName}</div>
                 <div>${visitor.idNumber}</div>
                 <div>${visitor.department}</div>   
-              `
-                //}
+              `}
     
             }
             return businessVisitor;
@@ -109,7 +108,7 @@ class VisitorList extends Domer {
     } */
 
     /* Loop i varje villkor, test 4.  */
-    
+
     checkVisitorToRender() {
         let completeVisitorList = '';
 
