@@ -3,6 +3,7 @@ class VisitorList extends Domer {
     visitors = [];
     selectVisitorToRender = '';
     confirmCheckOut = '';
+    idNumber;
 
 
     /* get visitors() {
@@ -109,6 +110,7 @@ class VisitorList extends Domer {
         for (let i = 0; i < this.visitors.length; i++) {
             if (idNumber == this.visitors[i].idNumber) {
                 //Bekräftar utcheckning
+                this.idNumber = idNumber;
                 this.confirmCheckOut = `A visitor with ID number ${this.idNumber} has been checked out.`;
                 this.visitors.splice(i, 1);
                 this.idNumber = '';
@@ -116,6 +118,7 @@ class VisitorList extends Domer {
             }
             else {
                 //Felmeddelande
+                this.idNumber = idNumber;
                 this.confirmCheckOut = `The ID number ${this.idNumber} does not exist in the list.`;
                 this.idNumber = '';
             }
@@ -127,7 +130,8 @@ class VisitorList extends Domer {
     render(html) {
         return html`
           <section>
-          ${this.businessVisitor()}
+          ${this.businessVisitor()} ${this.maintenanceVisitor()} ${this.personalVisitor()}
+          <p></p>
           </section>
         `
     }

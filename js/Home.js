@@ -68,6 +68,8 @@ class Home extends Domer {
 
     }
 
+    
+
     //Tömmer variabeln som bekräftar incheckning
     removeCheckInConfirmation() {
         this.confirmCheckIn = '';
@@ -145,7 +147,13 @@ class Home extends Domer {
         <section>
         <form class="top">
         <input bind="fullName" placeholder="Firstname Lastname*" click="removeCheckInConfirmation" type="text" ><br>
-        <input bind="idNumber" placeholder="YYMMDD-NNNN*" click="removeCheckInConfirmation" type="text" pattern="[0-9]{6}-[0-9]{4}" required><br><br>
+        <input 
+        bind="idNumber" 
+        placeholder="YYMMDD-NNNN*" 
+        click="removeCheckInConfirmation" 
+        type="text" 
+        pattern="[0-9]{6}-[0-9]{4}" 
+        required><br><br>
         <fieldset>
         <legend>Reason for visit</legend>
         <input type="radio" id="business" name="reason" click="enableDepartmentField"${this.checkedDept}>
@@ -164,7 +172,14 @@ class Home extends Domer {
         </form>
         <form class="bottom">
         <p>${this.visitorList.confirmCheckOut}</p>
-        <br><input bind="idNumberCheckOut" placeholder="YYMMDD-NNNN*" click="removeCheckOutConfirmation" type="text" pattern="[0-9]{6}-[0-9]{4}" required><br><br>
+        <br><input 
+        bind="idNumberCheckOut" 
+        placeholder="YYMMDD-NNNN*" 
+        click="removeCheckOutConfirmation" 
+        type="text" 
+        pattern="[0-9]{6}-[0-9]{4}"
+        required
+        ><br><br>
         <button type=button class="checkOutButton" click="checkOut" ${this.checkOutButtonControl()}>Check Out</button><br><br>
         </form>
         </section>
