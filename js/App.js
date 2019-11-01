@@ -2,8 +2,6 @@ class App extends Domer {
 
     
     image = new Image();
-    /* visitors = new VisitorList();
-    home = new Home(this.visitors); */
 
     constructor() {
         super();
