@@ -22,7 +22,6 @@ class Home extends Domer {
         this.visitorList = visitorList;
     }
 
-
     /* Incheckningsfunktioner */
     //Incheckning med villkor, olika objekt skapas beroende av vilket input-fält som väljs
     checkIn() {
@@ -68,7 +67,7 @@ class Home extends Domer {
 
     }
 
-    
+
 
     //Tömmer variabeln som bekräftar incheckning
     removeCheckInConfirmation() {
@@ -79,12 +78,12 @@ class Home extends Domer {
     /* Utcheckningsfunktioner */
     //Tar bort objekt från besökslistan
     checkOut() {
-        if(this.visitorList.visitors.length === 0) {
+        if (this.visitorList.visitors.length === 0) {
             this.visitorList.confirmCheckOut = `Sorry, there are no visitors in the system.`;
         }
         else {
-        this.visitorList.removeVisitor(this.idNumberCheckOut)
-        this.idNumberCheckOut = '';
+            this.visitorList.removeVisitor(this.idNumberCheckOut)
+            this.idNumberCheckOut = '';
         }
     }
 
@@ -146,7 +145,6 @@ class Home extends Domer {
         this.checkedPersonal = 'checked';
     }
 
-    //"/^[0-9]{6}\-[0-9]{4}$/" 
 
     render(html) {
         return html`
@@ -160,7 +158,7 @@ class Home extends Domer {
         type="text" 
         pattern="[0-9]{6}-[0-9]{4}" 
         required>
-        <br><br>
+        <br><br><!--Har inte fått pattern att fungera--->
         <fieldset>
         <legend>Reason for visit</legend>
         <input type="radio" id="business" name="reason" click="enableDepartmentField"${this.checkedDept}>
