@@ -43,6 +43,9 @@ class Home extends Domer {
             return;
         }
 
+        
+        
+
         //Bekräftar incheckning
         this.confirmCheckIn = `A visitor with ID number ${this.idNumber} has been checked in.`;
 
@@ -156,8 +159,8 @@ class Home extends Domer {
         placeholder="YYMMDD-NNNN" 
         click="removeCheckInConfirmation" 
         type="text" 
-        pattern="[0-9]{6}-[0-9]{4}" 
-        required>
+        required pattern="[0-9]{6}-[0-9]{4}" 
+        >
         <br><br><!--Har inte fått pattern att fungera--->
         <fieldset>
         <legend>Reason for visit</legend>
@@ -185,7 +188,7 @@ class Home extends Domer {
         type="text" 
         pattern="[0-9]{6}-[0-9]{4}"
         required
-        >
+        ><!--Har inte fått pattern att fungera--->
         <br><br>
         <button type=button class="checkOutButton" click="checkOut" ${this.checkOutButtonControl}>Check Out</button><br><br>
         </form>

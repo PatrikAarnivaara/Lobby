@@ -8,7 +8,7 @@ class VisitorList extends Domer {
     /* Lägger till objekt i listan */
     addVisitor(visitor) {
         this.visitors.push(visitor);
-
+        console.log(this.visitors);
     }
 
     /* Renderar ut olika objekt */
@@ -71,6 +71,7 @@ class VisitorList extends Domer {
                 this.idNumber = '';
             }
         }
+        console.log(this.visitors);
     }
 
 
